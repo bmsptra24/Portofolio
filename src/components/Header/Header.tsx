@@ -8,7 +8,7 @@ const Header = () => {
           Bima Saputra
         </p>
         <div className="flex gap-12">
-          {['Profil', 'Blog', 'About me'].map((item, index) => (
+          {['Profil', 'Blog', 'Puisi', 'About me'].map((item, index) => (
             <p
               key={index}
               className="hover:underline cursor-pointer hover:text-slate-950"
