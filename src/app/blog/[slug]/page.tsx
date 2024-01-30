@@ -1,12 +1,14 @@
 'use server'
-import Image from 'next/image'
 import Background from '@/components/Background/Background'
 import { readBlogBySlug } from '@/server/blog/crud'
 import { metadata } from '@/app/layout'
 import { BlogItem } from '@/types/blog'
+import markdownit from 'markdown-it'
+import React, { ReactElement } from 'react'
+const md = markdownit()
 
 const Page = async ({ params }: { params: { slug: string } }) => {
-  const blog: BlogItem = await readBlogBySlug(params.slug)
+  const blog = await readBlogBySlug(params.slug)
 
   if (!blog) {
     return <h1>Blog tidak ditemukan</h1>
@@ -18,7 +20,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     <article className="p-10 flex flex-col gap-5 w-[860px]">
       <Background />
 
-      <div>
+      {/* prose untuk bisa pakai h1 di next js */}
+      <section className="prose lg:prose-xl">{blog.body}</section>
+
+      {/* <div>
         <h1 className="text-5xl font-bold leading-normal">{blog.title}</h1>
         <hr className="mb-5" />
 
@@ -51,8 +56,23 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               </div>
             )
           }
+
+          if (section.type === 'code') {
+            return (
+              <SyntaxHighlighterComponent
+                key={section.id}
+                language="javascript"
+                codeString={section.body}
+              >
+                <AtomSyntaxHighlighter
+                  language={section.language}
+                  codeString={section.body}
+                />
+              </SyntaxHighlighterComponent>
+            )
+          }
         })}
-      </div>
+      </div> */}
     </article>
   )
 }
