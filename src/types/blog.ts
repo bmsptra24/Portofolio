@@ -1,6 +1,6 @@
-import { StaticImageData } from 'next/image'
-
 export type BlogItem = {
+  id: string
+  slug: string
   title: string
   body: string
 }

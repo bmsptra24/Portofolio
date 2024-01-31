@@ -4,8 +4,7 @@ import { readBlogBySlug } from '@/server/blog/crud'
 import { metadata } from '@/app/layout'
 import { BlogItem } from '@/types/blog'
 import markdownit from 'markdown-it'
-import React, { ReactElement } from 'react'
-const md = markdownit()
+import React from 'react'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const blog = await readBlogBySlug(params.slug)
