@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect }) => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded shadow hover:bg-gray-300 focus:outline-none focus:ring flex items-center"
+        className="px-4 py-2 bg-gray-200 text-gray-800 rounded shadow hover:bg-gray-300 focus:outline-none focus:ring flex items-center"
       >
         {value || 'Choose blog'} <IoIosArrowDown />
       </button>

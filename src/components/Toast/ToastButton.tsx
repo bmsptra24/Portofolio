@@ -23,7 +23,7 @@ const ToastButton: React.FC<Props> = ({
   return (
     <div>
       <button
-        className="bg-slate-500 hover:bg-slate-700 text-white py-2 px-4 rounded"
+        className="bg-slate-200 hover:bg-slate-300 py-2 px-4 rounded"
         onClick={handleClick}
       >
         {buttonText}
