@@ -1,3 +1,6 @@
+'use server'
+import { generateSlug } from '@/utils/blog'
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
@@ -8,13 +11,14 @@ const Header = () => {
           Bima Saputra
         </p>
         <div className="flex gap-12">
-          {['Profil', 'Blog', 'Puisi', 'About me'].map((item, index) => (
-            <p
+          {['Profil', 'Blog', 'About me'].map((item, index) => (
+            <Link
+              href={`/${generateSlug(item)}`}
               key={index}
               className="hover:underline cursor-pointer hover:text-slate-950"
             >
               {item}
-            </p>
+            </Link>
           ))}
         </div>
       </header>
