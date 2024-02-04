@@ -2,8 +2,6 @@
 import Background from '@/components/Background/Background'
 import { readBlogBySlug } from '@/server/blog/crud'
 import { metadata } from '@/app/layout'
-import { BlogItem } from '@/types/blog'
-import markdownit from 'markdown-it'
 import React from 'react'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
