@@ -1,0 +1,195 @@
+$nav-height: 4.7rem;
+$px-container: 7svw;
+
+// responsive
+$small: 480px;
+$medium: 900px;
+$large: 1280px;
+
+// colors
+$clr-white: white;
+$clr-black: black;
+$clr-primary: #ffd460;
+$clr-secondary: #2d4059;
+$clr-thirdary: #ea5455;
+$clr-fourary: #f07b3f;
+
+.profil-container {
+  width: 100%;
+
+  .header {
+    min-height: calc(100svh - $nav-height);
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background-color: $clr-secondary;
+    color: $clr-white;
+    .marquee {
+      // background-color: aqua;
+      margin-top: 4%;
+      overflow: hidden;
+      position: relative;
+      height: 370px;
+      width: 100%;
+      color: $clr-primary;
+
+      @media screen and (max-width: $small) {
+        margin-top: -10%;
+      }
+
+      .items {
+        position: absolute;
+        height: 100%;
+        width: max-content;
+        display: flex;
+        gap: 0.2em;
+        align-items: center;
+        animation: marquee 5s linear infinite;
+
+        position: absolute;
+        overflow: hidden;
+
+        font-size: 400px;
+        font-weight: bolder;
+
+        @media screen and (max-width: $small) {
+          animation: marquee 8s linear infinite;
+          font-size: 200px;
+        }
+      }
+    }
+
+    .intro {
+      // background-color: aqua;
+      padding-left: $px-container;
+      padding-right: $px-container;
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: $medium) {
+        justify-content: center;
+      }
+
+      // div {
+      //   border: 10px brown solid;
+      // }
+
+      .text1 {
+        max-width: 16rem;
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        p:nth-child(2) {
+          display: none;
+        }
+
+        @media screen and (max-width: $large) {
+          gap: 50px;
+          max-width: 12rem;
+        }
+
+        @media screen and (max-width: $medium) {
+          margin-top: 250px;
+          gap: 30px;
+          max-width: none;
+          p:nth-child(1) {
+            margin-right: 20rem;
+          }
+          p:nth-child(2) {
+            display: block;
+            margin-left: 20rem;
+          }
+        }
+
+        @media screen and (max-width: $small) {
+          margin-top: 10rem;
+          gap: 30px;
+          max-width: none;
+          p:nth-child(1) {
+            font-size: smaller;
+            margin-right: 5rem;
+          }
+          p:nth-child(2) {
+            display: block;
+            margin-left: 5rem;
+          }
+        }
+
+        .btn {
+          background-color: $clr-thirdary;
+          border-radius: 50%;
+          display: grid;
+          place-content: center;
+          align-self: flex-end;
+          height: 150px;
+          width: 150px;
+
+          @media screen and (max-width: $medium) {
+            align-self: center;
+          }
+        }
+      }
+
+      .hero {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: auto;
+        transform: translate(-50%, -50%);
+
+        // background-color: $clr-fourary;
+        display: grid;
+        place-content: center;
+        height: 600px;
+        width: 600px;
+
+        .image {
+          border-radius: 50%;
+        }
+
+        @media screen and (max-width: $large) {
+          height: 400px;
+          width: 400px;
+        }
+
+        @media screen and (max-width: $large) {
+          top: 30%;
+        }
+
+        @media screen and (max-width: $small) {
+          top: 30%;
+          height: 85svw;
+          width: 85svw;
+        }
+      }
+
+      .text2 {
+        max-width: 25rem;
+        display: flex;
+        align-items: end;
+
+        @media screen and (max-width: $large) {
+          max-width: 20rem;
+        }
+
+        @media screen and (max-width: $medium) {
+          display: none;
+        }
+
+        @media screen and (max-width: $small) {
+          max-width: 60rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(-1770px - 0.2em);
+  }
+}

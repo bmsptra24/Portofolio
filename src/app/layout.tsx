@@ -4,7 +4,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import Background from '@/components/Background/Background'
 
-const inter = Jost({ subsets: ['latin'] })
+const josh = Jost({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bmsptra24 Blog',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={josh.className}>
         <main className="text-xl text-slate-800 leading-7 tracking-wide flex flex-col items-center w-full relative">
           <Header />
           {children}

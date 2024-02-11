@@ -5,11 +5,14 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <section className="w-full border">
+    <section
+      className="w-full text-white "
+      style={{ backgroundColor: '#2d4059' }}
+    >
       <header className="container mx-auto flex justify-between p-6 w-full">
         <Link
           href={'/profil'}
-          className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-950"
+          className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-150"
         >
           Bima Saputra
         </Link>
@@ -18,7 +21,7 @@ const Header = () => {
             <Link
               href={`/${generateSlug(item)}`}
               key={index}
-              className="hover:underline cursor-pointer hover:text-slate-950"
+              className="hover:underline cursor-pointer hover:text-slate-150"
             >
               {item}
             </Link>
