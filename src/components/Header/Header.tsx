@@ -6,7 +6,7 @@ import React from 'react'
 const Header = () => {
   return (
     <section
-      className="w-full text-white "
+      className="w-full text-white z-10"
       style={{ backgroundColor: '#2d4059' }}
     >
       <header className="container mx-auto flex justify-between p-6 w-full">
