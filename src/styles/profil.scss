@@ -5,6 +5,7 @@ $px-container: 7svw;
 $small: 480px;
 $medium: 900px;
 $large: 1280px;
+$screen-height: 965px;
 
 // colors
 $clr-white: white;
@@ -30,7 +31,7 @@ body {
   background-color: $clr-secondary;
 
   .header {
-    min-height: calc(100svh - $nav-height);
+    min-height: calc($screen-height - $nav-height);
     width: 100%;
     overflow-x: hidden;
     position: relative;
@@ -63,7 +64,7 @@ body {
         display: flex;
         gap: 0.2em;
         align-items: center;
-        animation: marquee 5s linear infinite;
+        animation: marquee 7s linear infinite;
 
         position: absolute;
         overflow: hidden;
@@ -219,7 +220,7 @@ body {
   }
 
   .about {
-    min-height: 100svh;
+    min-height: $screen-height;
     width: 100%;
     background-color: $clr-primary;
     border-radius: 5rem;
@@ -259,6 +260,12 @@ body {
           gap: 1rem;
           align-items: center;
           padding-right: 8rem;
+          cursor: default;
+          filter: grayscale(100%);
+
+          &:hover {
+            animation: grayscale 500ms ease-in-out forwards;
+          }
 
           p {
             color: $clr-white;
@@ -268,8 +275,7 @@ body {
 
           .img {
             width: 70px;
-            height: 70px;
-            filter: grayscale(100%) brightness(100);
+            height: auto;
           }
         }
 
@@ -287,7 +293,171 @@ body {
       }
     }
   }
+
+  .puisi {
+    $distance: 10rem;
+    min-height: $screen-height;
+    width: 100%;
+    margin-top: calc(($screen-height / 2) + 1rem);
+    position: relative;
+
+    // nonactive cursor
+    cursor: none;
+    user-select: none;
+
+    .btn-read-more {
+      background-color: #f07b3f;
+      height: 120px;
+      width: 120px;
+      position: absolute;
+      border-radius: 50%;
+      right: 10rem;
+      bottom: 10rem;
+      z-index: 2;
+    }
+
+    // pointer
+    .pointer {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #f07b3f;
+      z-index: 2;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // dark cover
+    .background {
+      inset: 0;
+      position: absolute;
+      height: $screen-height;
+      background-color: $clr-primary;
+      z-index: 1;
+      clip-path: circle(70px at var(--cursor-x) var(--cursor-y));
+
+      &:active {
+        transition: 500ms linear;
+        clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
+      }
+
+      h1 {
+        color: $clr-thirdary;
+      }
+
+      .puisi-body p {
+        color: $clr-black;
+      }
+    }
+
+    h1 {
+      color: $clr-primary;
+      padding: $distance;
+      font-size: 15rem;
+      // background-color: #ea5455;
+    }
+
+    .puisi-body {
+      margin-left: $distance;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+
+      p {
+        color: $clr-white;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .project {
+    $distance: 10rem;
+    min-height: $screen-height;
+    width: 100%;
+    position: relative;
+
+    .cover {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background-color: $clr-secondary;
+      opacity: 0%;
+      z-index: 1;
+
+      $ilustration-1-height: 600px;
+      $ilustration-1-width: 900px;
+
+      .ilustration-1 {
+        margin: auto;
+        inset: 0;
+        height: $ilustration-1-height;
+        width: $ilustration-1-width;
+        position: absolute;
+        background-color: $clr-fourary;
+        border-radius: 50px;
+        opacity: 100%;
+        z-index: 2;
+        background-image: url('../assets/image-1.jpg');
+
+        $ilustration-2-height: 230px;
+        $ilustration-2-width: 350px;
+
+        .ilustration-2 {
+          border-radius: 50px;
+          position: absolute;
+          top: 400px;
+          right: -100px;
+          height: $ilustration-2-height;
+          width: $ilustration-2-width;
+          background-color: $clr-thirdary;
+        }
+      }
+    }
+
+    h1 {
+      padding: $distance;
+      color: $clr-primary;
+      font-size: 15rem;
+      // background-color: #ea5455;
+    }
+
+    .items {
+      margin-left: $distance;
+      margin-right: $distance;
+      border-bottom: 1.7px solid $clr-white;
+
+      div {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem;
+        border-top: 1.7px solid $clr-white;
+        color: $clr-white;
+
+        &:hover {
+          z-index: 2;
+          opacity: 20%;
+          animation: project-show 500ms ease-in-out forwards;
+        }
+      }
+    }
+  }
 }
+
+// // Define variables for floating effect
+// $floating-distance: 10px;
+// $floating-duration: 1s;
+
+// // Define styles for the floating element
+// .floating-element {
+//   transition: transform $floating-duration ease-in-out;
+// }
+
+// // Define hover effect to trigger the floating
+// .floating-element:hover {
+//   transform: translateY(-$floating-distance);
+// }
 
 @keyframes marquee {
   0% {
@@ -297,3 +467,34 @@ body {
     left: calc(-1770px - 0.2em);
   }
 }
+
+@keyframes grayscale {
+  to {
+    filter: grayscale(0%);
+  }
+}
+
+@keyframes project-show {
+  $border-size: 3px;
+  to {
+    opacity: 100%;
+    padding-top: calc(1.5rem - $border-size);
+    padding-bottom: calc(1.5rem - $border-size);
+    border-top: $border-size solid $clr-white;
+    border-bottom: $border-size solid $clr-white;
+  }
+}
+
+// @keyframes fadeIn {
+//   to {
+//     display: block;
+//     opacity: 95%;
+//   }
+// }
+
+// @keyframes fadeOut {
+//   to {
+//     display: none;
+//     opacity: 0%;
+//   }
+// }

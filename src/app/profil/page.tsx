@@ -1,10 +1,11 @@
 import React from 'react'
 
 import '../../styles/profil.scss'
-import { Bebas_Neue } from 'next/font/google'
 import Image from 'next/image'
 import Header from '@/components/Header/Header'
-const bebasNeue = Bebas_Neue({ subsets: ['latin'], weight: '400' })
+import Puisi from '@/components/Profil/Puisi'
+import { bebasNeue } from '@/styles/font'
+import Project from '@/components/Profil/Project'
 
 type Skill = {
   name: string
@@ -36,17 +37,20 @@ const Page = () => {
   const skillsMarqueee1: Skill[][] = [
     [
       { name: 'React', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Next JS', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Node JS', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Javascript', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Typescript', iconSrc: require('../../assets/icons/react.png') },
+      { name: 'Next JS', iconSrc: require('../../assets/icons/nextjs.png') },
+      { name: 'Node JS', iconSrc: require('../../assets/icons/nodejs.png') },
+      { name: 'Javascript', iconSrc: require('../../assets/icons/js.png') },
+      { name: 'Typescript', iconSrc: require('../../assets/icons/ts.png') },
     ],
     [
-      { name: 'React', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Next JS', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Node JS', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Javascript', iconSrc: require('../../assets/icons/react.png') },
-      { name: 'Typescript', iconSrc: require('../../assets/icons/react.png') },
+      { name: 'HTML', iconSrc: require('../../assets/icons/html.png') },
+      { name: 'CSS', iconSrc: require('../../assets/icons/css.webp') },
+      {
+        name: 'Bootstrap',
+        iconSrc: require('../../assets/icons/bootstrap.png'),
+      },
+      { name: 'Tailwind', iconSrc: require('../../assets/icons/tailwind.png') },
+      { name: 'SASS', iconSrc: require('../../assets/icons/sass.png') },
     ],
   ]
 
@@ -142,6 +146,10 @@ const Page = () => {
           </div>
         </div>
       </article>
+
+      <Puisi />
+
+      <Project />
     </main>
   )
 }
