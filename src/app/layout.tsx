@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={josh.className}>
         <main className="text-xl text-slate-800 leading-7 tracking-wide flex flex-col items-center w-full relative">
-          {/* <Header /> */}
           {children}
         </main>
       </body>

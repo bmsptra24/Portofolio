@@ -30,7 +30,7 @@ body {
   display: block;
   background-color: $clr-secondary;
 
-  .header {
+  .person {
     min-height: calc($screen-height - $nav-height);
     width: 100%;
     overflow-x: hidden;
@@ -153,6 +153,14 @@ body {
           width: 150px;
           font-size: large;
           font-weight: bold;
+          cursor: pointer;
+          transition: all 300ms;
+
+          &:hover {
+            $shadow-size: 6px;
+            box-shadow: $shadow-size $shadow-size $clr-fourary,
+              calc($shadow-size * -1) calc($shadow-size * -1) $clr-primary;
+          }
 
           @media screen and (max-width: $medium) {
             align-self: center;
@@ -224,9 +232,10 @@ body {
     width: 100%;
     background-color: $clr-primary;
     border-radius: 5rem;
-    padding: 70px 70px 70px 70px;
+    padding: 70px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
     color: $clr-secondary;
 
     // paralax effect
@@ -234,7 +243,7 @@ body {
     transform: translateZ(-5px) scale(1.5084);
 
     .title {
-      margin-top: 5rem;
+      margin-top: 35rem;
       border-top: 0.2rem solid $clr-secondary;
       border-bottom: 0.2rem solid $clr-secondary;
       height: 15rem;
@@ -244,10 +253,12 @@ body {
         font-size: 15rem;
       }
     }
+
     .marquee {
       background-color: #f07b3f;
       position: relative;
       display: flex;
+      margin-bottom: -5rem;
 
       .items {
         display: flex;
@@ -255,7 +266,7 @@ body {
         background-color: $clr-fourary;
         div {
           display: flex;
-          padding: 3rem;
+          padding: 2rem;
           border-radius: 20px;
           gap: 1rem;
           align-items: center;
@@ -300,6 +311,7 @@ body {
     width: 100%;
     margin-top: calc(($screen-height / 2) + 1rem);
     position: relative;
+    border-radius: 100px;
 
     // nonactive cursor
     cursor: none;
@@ -377,12 +389,10 @@ body {
     position: relative;
 
     .cover {
-      display: none;
       position: absolute;
       inset: 0;
       background-color: $clr-secondary;
-      opacity: 0%;
-      z-index: 1;
+      opacity: 100%;
 
       $ilustration-1-height: 600px;
       $ilustration-1-width: 900px;
@@ -393,23 +403,26 @@ body {
         height: $ilustration-1-height;
         width: $ilustration-1-width;
         position: absolute;
-        background-color: $clr-fourary;
-        border-radius: 50px;
         opacity: 100%;
         z-index: 2;
-        background-image: url('../assets/image-1.jpg');
 
         $ilustration-2-height: 230px;
         $ilustration-2-width: 350px;
 
+        .img {
+          border-radius: 25px;
+        }
+
         .ilustration-2 {
-          border-radius: 50px;
           position: absolute;
           top: 400px;
           right: -100px;
           height: $ilustration-2-height;
           width: $ilustration-2-width;
-          background-color: $clr-thirdary;
+
+          .img {
+            border-radius: 10px;
+          }
         }
       }
     }
@@ -424,21 +437,75 @@ body {
     .items {
       margin-left: $distance;
       margin-right: $distance;
-      border-bottom: 1.7px solid $clr-white;
 
-      div {
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5rem;
-        border-top: 1.7px solid $clr-white;
-        color: $clr-white;
+      table {
+        width: 100%;
 
-        &:hover {
-          z-index: 2;
-          opacity: 20%;
-          animation: project-show 500ms ease-in-out forwards;
+        tbody {
+          tr {
+            position: relative;
+            align-items: center;
+            height: 5rem;
+            border-top: 1.7px solid $clr-white;
+            &:nth-last-child(1) {
+              border-bottom: 1.7px solid $clr-white;
+            }
+            color: $clr-white;
+            opacity: 100%;
+
+            // highlight the selection item
+            &:hover {
+              z-index: 2;
+              opacity: 20%;
+              animation: project-show 300ms ease-in-out forwards;
+            }
+
+            // highlight the unselection item
+            &:not(:hover) {
+              opacity: 20%;
+            }
+
+            td {
+              &:nth-last-child(1) {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                height: 5rem;
+              }
+            }
+
+            span {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              cursor: pointer;
+
+              &:hover {
+                .icon-arrow {
+                  padding: 10px;
+                  font-size: 40px;
+                  rotate: 0deg;
+                }
+              }
+
+              .icon-arrow {
+                color: $clr-secondary;
+                background-color: $clr-white;
+                padding: 7px;
+                font-size: 30px;
+                border-radius: 50%;
+                transition: all 300ms;
+                rotate: -45deg;
+              }
+            }
+          }
+        }
+      }
+
+      &:not(:hover) {
+        tr {
+          transition: all 1s;
+          opacity: 100% !important;
         }
       }
     }
@@ -446,18 +513,82 @@ body {
 }
 
 // // Define variables for floating effect
-// $floating-distance: 10px;
-// $floating-duration: 1s;
+$floating-distance: 5px;
+$floating-duration: 5s;
 
-// // Define styles for the floating element
-// .floating-element {
-//   transition: transform $floating-duration ease-in-out;
-// }
+// Define styles for the floating element
+.floating-sm {
+  animation: floating-sm $floating-duration infinite alternate ease-in-out !important;
+}
+.floating-md {
+  animation: floating-md $floating-duration infinite alternate ease-in-out !important;
+}
 
-// // Define hover effect to trigger the floating
-// .floating-element:hover {
-//   transform: translateY(-$floating-distance);
-// }
+@keyframes floating-sm {
+  0% {
+    transform: translate(
+      calc((random(7) + 3) * 1px),
+      calc((random(7) + 3) * 1px)
+    );
+  }
+  25% {
+    transform: translate(
+      calc((random(7) + 3) * 1px),
+      calc((random(7) + 3) * 1px)
+    );
+  }
+  50% {
+    transform: translate(
+      calc((random(7) + 3) * 1px),
+      calc((random(7) + 3) * 1px)
+    );
+  }
+  75% {
+    transform: translate(
+      calc((random(7) + 3) * 1px),
+      calc((random(7) + 3) * 1px)
+    );
+  }
+  100% {
+    transform: translate(
+      calc((random(7) + 3) * 1px),
+      calc((random(7) + 3) * 1px)
+    );
+  }
+}
+
+@keyframes floating-md {
+  0% {
+    transform: translate(
+      calc((random(17) + 3) * 1px),
+      calc((random(17) + 3) * 1px)
+    );
+  }
+  25% {
+    transform: translate(
+      calc((random(17) + 3) * 1px),
+      calc((random(17) + 3) * 1px)
+    );
+  }
+  50% {
+    transform: translate(
+      calc((random(17) + 3) * 1px),
+      calc((random(17) + 3) * 1px)
+    );
+  }
+  75% {
+    transform: translate(
+      calc((random(17) + 3) * 1px),
+      calc((random(17) + 3) * 1px)
+    );
+  }
+  100% {
+    transform: translate(
+      calc((random(17) + 3) * 1px),
+      calc((random(17) + 3) * 1px)
+    );
+  }
+}
 
 @keyframes marquee {
   0% {
@@ -485,16 +616,34 @@ body {
   }
 }
 
-// @keyframes fadeIn {
-//   to {
-//     display: block;
-//     opacity: 95%;
-//   }
-// }
+$animation-duration: 500ms;
 
-// @keyframes fadeOut {
-//   to {
-//     display: none;
-//     opacity: 0%;
-//   }
-// }
+.fadeIn {
+  animation: fadeIn $animation-duration linear forwards !important;
+}
+
+.fadeOut {
+  animation: fadeOut $animation-duration linear forwards !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0%;
+  }
+  100% {
+    display: block;
+    opacity: 95%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 95%;
+  }
+  100% {
+    display: none;
+    opacity: 0%;
+  }
+}

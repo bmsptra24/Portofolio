@@ -1,52 +1,131 @@
 'use client'
 import { bebasNeue } from '@/styles/font'
-import React, { useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { FaArrowRightLong } from 'react-icons/fa6'
 
 const Project = () => {
+  interface TProject {
+    title: string
+    tech: string
+    ilustration1: any
+    ilustration2: any
+    url: string
+  }
+
+  const [ilustration, setIlustration] = useState<[string, string]>([
+    require('../../assets/image-1.jpg'),
+    require('../../assets/image-1.jpg'),
+  ])
+
+  const projectsList: TProject[] = [
+    {
+      title: 'Meja Belajar Digital',
+      tech: 'React, Tailwind',
+      ilustration1: require('../../assets/images/projects/mbd.png'),
+      ilustration2: require('../../assets/images/projects/mbd-2.png'),
+      url: 'https://mejabelajardigital.web.app/',
+    },
+    {
+      title: 'Root of Life',
+      tech: 'React, Next, Tailwind',
+      ilustration1: require('../../assets/images/projects/root-of-life.png'),
+      ilustration2: require('../../assets/images/projects/root-of-life-2.png'),
+      url: 'https://bmsptra24.github.io/Root-of-Life/',
+    },
+    {
+      title: 'Nebeng',
+      tech: 'React Native',
+      ilustration1: require('../../assets/images/projects/nebeng.png'),
+      ilustration2: require('../../assets/images/projects/nebeng-2.png'),
+      url: 'https://github.com/bmsptra24/nebeng',
+    },
+    {
+      title: 'Beet AI',
+      tech: 'React, Next',
+      ilustration1: require('../../assets/images/projects/beet-ai.png'),
+      ilustration2: require('../../assets/images/projects/beet-ai-2.png'),
+      url: 'https://beet-ai.vercel.app/',
+    },
+    {
+      title: 'Portofolio V1',
+      tech: 'React Native, Tailwind',
+      ilustration1: require('../../assets/images/projects/portofolio1.png'),
+      ilustration2: require('../../assets/images/projects/portovolio1-2.png'),
+      url: 'https://bmsptra24.github.io/Web-Portfolio/',
+    },
+    {
+      title: 'Search Movie',
+      tech: 'HTML, CSS, JS',
+      ilustration1: require('../../assets/images/projects/search-movie.png'),
+      ilustration2: require('../../assets/images/projects/search-movie-2.png'),
+      url: 'https://bmsptra24.github.io/Search-Movies/',
+    },
+    {
+      title: 'Portofolio V2',
+      tech: 'Next JS, Tailwind',
+      ilustration1: require('../../assets/images/projects/portofolio2.png'),
+      ilustration2: require('../../assets/images/projects/portofolio2-2.png'),
+      url: 'https://portofolio-bmsptra24.vercel.app/',
+    },
+    {
+      title: 'Calculator',
+      tech: 'HTML, CSS, JS',
+      ilustration1: require('../../assets/images/projects/calculator2.png'),
+      ilustration2: require('../../assets/images/projects/calculator2-2.png'),
+      url: 'https://bmsptra24.github.io/Simple-Calculator-v2.0/',
+    },
+  ]
   //! add anmimate
-  const onItemHover = () => {
+  const onItemHover = async (project: TProject) => {
+    setIlustration([project.ilustration1, project.ilustration2])
+
     const cover = document.querySelector('.project .cover') as HTMLElement
-    cover.style.display = 'block'
-    cover.style.opacity = '97%'
+    cover.classList.replace('fadeOut', 'fadeIn')
   }
 
   const onItemLeave = () => {
     const cover = document.querySelector('.project .cover') as HTMLElement
-    cover.style.display = 'none'
-    cover.style.opacity = '0%'
+    // cover.classList.replace('fadeIn', 'fadeIn')
+    cover.classList.replace('fadeIn', 'fadeOut')
   }
 
   return (
     <article className="project">
       <h1 className={`${bebasNeue.className} `}>PROJECTS</h1>
 
-      <div className="cover">
-        <div className="ilustration-1">
-          <div className="ilustration-2"></div>
+      <div className="cover fadeOut">
+        <div className="ilustration-1 floating-sm">
+          <Image className="img" alt="ilustration-1" src={ilustration[0]} />
+          <div className="ilustration-2 floating-md">
+            <Image className="img" alt="ilustration-1" src={ilustration[1]} />
+          </div>
         </div>
       </div>
 
       <div className="items">
-        <div onMouseOver={onItemHover} onMouseLeave={onItemLeave}>
-          <p>Nebeng</p>
-          <p>React Native</p>
-          <p>Launch</p>
-        </div>
-        <div onMouseOver={onItemHover} onMouseLeave={onItemLeave}>
-          <p>Nebeng</p>
-          <p>React Native</p>
-          <p>Launch</p>
-        </div>
-        <div onMouseOver={onItemHover} onMouseLeave={onItemLeave}>
-          <p>Nebeng</p>
-          <p>React Native</p>
-          <p>Launch</p>
-        </div>
-        <div onMouseOver={onItemHover} onMouseLeave={onItemLeave}>
-          <p>Nebeng</p>
-          <p>React Native</p>
-          <p>Launch</p>
-        </div>
+        <table>
+          <tbody>
+            {projectsList.map((project, index) => (
+              <tr
+                key={index}
+                onMouseOver={() => onItemHover(project)}
+                onMouseLeave={onItemLeave}
+              >
+                <td>{project.title}</td>
+                <td>{project.tech}</td>
+                <td>
+                  <Link target="_blank" href={project.url}>
+                    <span>
+                      Launch <FaArrowRightLong className="icon-arrow" />
+                    </span>
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </article>
   )
