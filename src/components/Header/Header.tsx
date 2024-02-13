@@ -12,7 +12,7 @@ const Header = () => {
     >
       <header className="container mx-auto flex justify-between p-6 w-full">
         <Link
-          href={'/profil'}
+          href={'/'}
           className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-150"
         >
           Bima Saputra
