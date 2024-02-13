@@ -1,0 +1,133 @@
+@import '../animations.module.scss';
+@import '../variables.module.scss';
+
+.project {
+  $distance: 10rem;
+  min-height: $screen-height;
+  width: 100%;
+  position: relative;
+
+  .cover {
+    position: sticky;
+    top: 50%;
+    background-color: $clr-secondary;
+    opacity: 100%;
+
+    $ilustration-1-height: 600px;
+    $ilustration-1-width: 900px;
+
+    .ilustration-1 {
+      margin: auto;
+      inset: 0;
+      height: $ilustration-1-height;
+      width: $ilustration-1-width;
+      position: absolute;
+      opacity: 100%;
+      z-index: 2;
+
+      $ilustration-2-height: 230px;
+      $ilustration-2-width: 350px;
+
+      .img {
+        border-radius: 25px;
+      }
+
+      .ilustration-2 {
+        position: absolute;
+        top: 400px;
+        right: -100px;
+        height: $ilustration-2-height;
+        width: $ilustration-2-width;
+
+        .img {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  h1 {
+    padding: $distance;
+    color: $clr-primary;
+    font-size: 15rem;
+    // background-color: #ea5455;
+  }
+
+  .items {
+    margin-left: $distance;
+    margin-right: $distance;
+
+    table {
+      width: 100%;
+
+      tbody {
+        tr {
+          position: relative;
+          align-items: center;
+          height: 5rem;
+          border-top: 1.7px solid $clr-white;
+          &:nth-last-child(1) {
+            border-bottom: 1.7px solid $clr-white;
+          }
+          color: $clr-white;
+          opacity: 100%;
+
+          // highlight the selection item
+          &:hover {
+            z-index: 2;
+            opacity: 20%;
+            animation: project-show 300ms ease-in-out forwards;
+          }
+
+          // highlight the unselection item
+          &:not(:hover) {
+            opacity: 20%;
+          }
+
+          td {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+            &:nth-last-child(1) {
+              display: flex;
+              justify-content: end;
+              align-items: center;
+              height: 5rem;
+            }
+          }
+
+          span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+              .icon-arrow {
+                padding: 10px;
+                font-size: 40px;
+                rotate: 0deg;
+              }
+            }
+
+            .icon-arrow {
+              color: $clr-secondary;
+              background-color: $clr-white;
+              padding: 7px;
+              font-size: 30px;
+              border-radius: 50%;
+              transition: all 300ms;
+              rotate: -45deg;
+            }
+          }
+        }
+      }
+    }
+
+    &:not(:hover) {
+      tr {
+        transition: all 1s;
+        opacity: 100% !important;
+      }
+    }
+  }
+}

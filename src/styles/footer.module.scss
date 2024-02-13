@@ -1,0 +1,14 @@
+// colors
+$clr-white: white;
+$clr-black: black;
+$clr-primary: #ffd460;
+$clr-secondary: #2d4059;
+$clr-thirdary: #ea5455;
+$clr-fourary: #f07b3f;
+
+.footer {
+  margin-top: 100px;
+  height: 300px;
+  border-top: 2px solid $clr-white;
+  color: $clr-white;
+}

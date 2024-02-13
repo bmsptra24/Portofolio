@@ -2,12 +2,12 @@
 import { generateSlug } from '@/utils/blog'
 import Link from 'next/link'
 import React from 'react'
-import '../../styles/header.scss'
+import style from '../../styles/header.module.scss'
 
 const Header = () => {
   return (
     <section
-      className="header-container w-full z-10"
+      className={style['header-container']}
       // style={{ backgroundColor: '#2d4059' }}
     >
       <header className="container mx-auto flex justify-between p-6 w-full">

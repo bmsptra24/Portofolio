@@ -1,6 +1,7 @@
 import { bebasNeue } from '@/styles/font'
 import Image from 'next/image'
 import React from 'react'
+import style from '../../styles/profil/skill.module.scss'
 
 type Skill = {
   name: string
@@ -16,7 +17,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skillName, iconSrc }) => {
   return (
     <div>
       <Image
-        className="img"
+        className={style['img']}
         width={100}
         height={100}
         alt={skillName}
@@ -49,9 +50,16 @@ const Skills = () => {
     ],
   ]
   return (
-    <article className="about">
-      <div className="marquee">
-        <div className="items">
+    <article className={style['skill-container']}>
+      <div className={style['marquee']}>
+        <div className={style['items']}>
+          {skillsMarqueee1[0].map((skill, index) => (
+            <SkillItem
+              key={index}
+              skillName={skill.name}
+              iconSrc={skill.iconSrc}
+            />
+          ))}
           {skillsMarqueee1[0].map((skill, index) => (
             <SkillItem
               key={index}
@@ -68,7 +76,14 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="items">
+        <div className={style['items']}>
+          {skillsMarqueee1[1].map((skill, index) => (
+            <SkillItem
+              key={index}
+              skillName={skill.name}
+              iconSrc={skill.iconSrc}
+            />
+          ))}
           {skillsMarqueee1[1].map((skill, index) => (
             <SkillItem
               key={index}
@@ -85,7 +100,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className="title">
+      <div className={style['title']}>
         <h1 className={`${bebasNeue.className}`}>SKILLS</h1>
       </div>
     </article>

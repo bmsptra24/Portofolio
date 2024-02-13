@@ -1,7 +1,7 @@
 'use client'
 
 import { bebasNeue } from '@/styles/font'
-import '../../styles/profil.scss'
+import style from '../../styles/profil/puisi.module.scss'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
@@ -20,14 +20,14 @@ const Puisi = () => {
   }, [])
 
   return (
-    <article className="puisi">
+    <article className={style['puisi']}>
       <Link href={'/puisi'} target="_blank">
-        <button className="btn-read-more">Read more!</button>
+        <button className={style['btn-read-more']}>Read more!</button>
       </Link>
-      <div className="background">
+      <div className={style['background']}>
         <h1 className={`${bebasNeue.className} `}>POSEIDON POWER</h1>
 
-        <div className="puisi-body">
+        <div className={style['puisi-body']}>
           <p>The Poseidon, in doubt, spells out his power</p>
           <p>Debating between existence and void</p>
           <p>Is this a wise wisdom</p>
@@ -41,7 +41,7 @@ const Puisi = () => {
       </div>
       <h1 className={`${bebasNeue.className} `}>KEKUATAN POSEIDON</h1>
 
-      <div className="puisi-body">
+      <div className={style['puisi-body']}>
         <p>Sang Poseidon, dalam keraguan mengeja kekuatannya</p>
         <p>Memperdebatkan antara keberadaan dan kekosongan</p>
         <p>Apakah ini adalah kebijaksanaan yang bijaksana</p>

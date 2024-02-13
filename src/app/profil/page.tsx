@@ -8,6 +8,7 @@ import { bebasNeue } from '@/styles/font'
 import Project from '@/components/Profil/Project'
 import Person from '@/components/Profil/Person'
 import Skills from '@/components/Profil/Skills'
+import Footer from '@/components/Footer/Footer'
 
 const Page = () => {
   return (
@@ -17,6 +18,7 @@ const Page = () => {
       <Skills />
       <Puisi />
       <Project />
+      <Footer />
     </main>
   )
 }

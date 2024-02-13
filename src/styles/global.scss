@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'animations.module.scss';
+@import 'variables.module.scss';
+
+// // Define variables for floating effect
+$floating-distance: 5px;
+$floating-duration: 5s;
+
+// Define styles for the floating element
+.floating-sm {
+  animation: floating-sm $floating-duration infinite alternate ease-in-out !important;
+}
+.floating-md {
+  animation: floating-md $floating-duration infinite alternate ease-in-out !important;
+}
+
+$animation-duration: 500ms;
+
+.fadeIn {
+  animation: fadeIn $animation-duration linear forwards !important;
+}
+
+.fadeOut {
+  animation: fadeOut $animation-duration linear forwards !important;
+}

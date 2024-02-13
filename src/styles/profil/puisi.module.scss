@@ -1,0 +1,79 @@
+@import '../animations.module.scss';
+@import '../variables.module.scss';
+
+.puisi {
+  $distance: 10rem;
+  min-height: $screen-height;
+  width: 100%;
+  margin-top: calc(($screen-height / 2) + 1rem);
+  position: relative;
+  border-radius: 100px;
+
+  // nonactive cursor
+  cursor: none;
+  user-select: none;
+
+  .btn-read-more {
+    background-color: #f07b3f;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    border-radius: 50%;
+    right: 10rem;
+    bottom: 10rem;
+    z-index: 2;
+  }
+
+  // pointer
+  .pointer {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #f07b3f;
+    z-index: 2;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // dark cover
+  .background {
+    inset: 0;
+    position: absolute;
+    height: $screen-height;
+    background-color: $clr-primary;
+    z-index: 1;
+    clip-path: circle(70px at var(--cursor-x) var(--cursor-y));
+
+    &:active {
+      transition: 500ms linear;
+      clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
+    }
+
+    h1 {
+      color: $clr-thirdary;
+    }
+
+    .puisi-body p {
+      color: $clr-black;
+    }
+  }
+
+  h1 {
+    color: $clr-primary;
+    padding: $distance;
+    font-size: 15rem;
+    // background-color: #ea5455;
+  }
+
+  .puisi-body {
+    margin-left: $distance;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    p {
+      color: $clr-white;
+      font-size: 2rem;
+    }
+  }
+}

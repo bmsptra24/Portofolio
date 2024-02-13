@@ -1,0 +1,199 @@
+@import '../animations.module.scss';
+@import '../variables.module.scss';
+
+.person {
+  min-height: calc($screen-height - $nav-height);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: $clr-secondary;
+  color: $clr-white;
+
+  // paralax effect
+  z-index: -1;
+  transform: translateZ(-10px) scale(2.084);
+  transform-style: preserve-3d;
+  margin-bottom: 51svh;
+
+  .marquee {
+    // background-color: aqua;
+    margin-top: 4%;
+    overflow: hidden;
+    position: relative;
+    height: 370px;
+    width: 100%;
+    color: $clr-primary;
+
+    @media screen and (max-width: $small) {
+      margin-top: -10%;
+    }
+
+    .items {
+      position: absolute;
+      height: 100%;
+      width: max-content;
+      display: flex;
+      gap: 0.2em;
+      align-items: center;
+      animation: marquee 7s linear infinite;
+
+      position: absolute;
+      overflow: hidden;
+
+      font-size: 400px;
+      font-weight: bolder;
+
+      @media screen and (max-width: $small) {
+        animation: marquee 8s linear infinite;
+        font-size: 200px;
+      }
+    }
+  }
+
+  .intro {
+    // background-color: aqua;
+    padding-left: $px-container;
+    padding-right: $px-container;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $medium) {
+      justify-content: center;
+    }
+
+    // div {
+    //   border: 10px brown solid;
+    // }
+
+    .text1 {
+      max-width: 16rem;
+      font-size: medium;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+
+      p {
+        span {
+          color: $clr-primary;
+        }
+
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: $large) {
+        gap: 50px;
+        max-width: 12rem;
+      }
+
+      @media screen and (max-width: $medium) {
+        margin-top: 250px;
+        gap: 30px;
+        max-width: none;
+        p:nth-child(1) {
+          margin-right: 20rem;
+        }
+        p:nth-child(2) {
+          display: block;
+          margin-left: 20rem;
+        }
+      }
+
+      @media screen and (max-width: $small) {
+        margin-top: 10rem;
+        gap: 30px;
+        max-width: none;
+        p:nth-child(1) {
+          font-size: smaller;
+          margin-right: 5rem;
+        }
+        p:nth-child(2) {
+          display: block;
+          margin-left: 5rem;
+        }
+      }
+
+      .btn {
+        background-color: $clr-thirdary;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        align-self: flex-end;
+        height: 150px;
+        width: 150px;
+        font-size: large;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 300ms;
+
+        &:hover {
+          $shadow-size: 6px;
+          box-shadow: $shadow-size $shadow-size $clr-fourary,
+            calc($shadow-size * -1) calc($shadow-size * -1) $clr-primary;
+        }
+
+        @media screen and (max-width: $medium) {
+          align-self: center;
+        }
+      }
+    }
+
+    .hero {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: auto;
+      transform: translate(-50%, -50%);
+
+      // background-color: $clr-fourary;
+      display: grid;
+      place-content: center;
+      height: 600px;
+      width: 600px;
+
+      .image {
+        border-radius: 50%;
+      }
+
+      @media screen and (max-width: $large) {
+        height: 400px;
+        width: 400px;
+      }
+
+      @media screen and (max-width: $large) {
+        top: 30%;
+      }
+
+      @media screen and (max-width: $small) {
+        top: 30%;
+        height: 85svw;
+        width: 85svw;
+      }
+    }
+
+    .text2 {
+      max-width: 25rem;
+      display: flex;
+      align-items: end;
+
+      p {
+        span {
+          color: $clr-primary;
+        }
+      }
+
+      @media screen and (max-width: $large) {
+        max-width: 20rem;
+      }
+
+      @media screen and (max-width: $medium) {
+        display: none;
+      }
+
+      @media screen and (max-width: $small) {
+        max-width: 60rem;
+      }
+    }
+  }
+}
