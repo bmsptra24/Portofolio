@@ -4,10 +4,18 @@ import Link from 'next/link'
 import React from 'react'
 import style from '../../styles/header.module.scss'
 
-const Header = () => {
+type Props = {
+  variant: 'dark' | 'light'
+}
+
+const Header: React.FC<Props> = (props) => {
+  const { variant } = props
+
   return (
     <section
-      className={style['header-container']}
+      className={
+        variant === 'dark' ? style['header-dark'] : style['header-light']
+      }
       // style={{ backgroundColor: '#2d4059' }}
     >
       <header className="container mx-auto flex justify-between p-6 w-full">
@@ -15,16 +23,16 @@ const Header = () => {
           href={'/'}
           className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-150"
         >
-          Bima Saputra
+          <p>Bima Saputra</p>
         </Link>
         <div className="flex gap-12">
           {['Blog'].map((item, index) => (
             <Link
               href={`/${generateSlug(item)}`}
               key={index}
-              className="hover:underline cursor-pointer hover:text-slate-150"
+              className="cursor-pointer hover:text-slate-150"
             >
-              {item}
+              <p>{item}</p>
             </Link>
           ))}
         </div>

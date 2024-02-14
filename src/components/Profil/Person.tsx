@@ -6,7 +6,7 @@ import React from 'react'
 const Person = () => {
   return (
     <article className={style.person}>
-      <section className={style.marquee}>
+      <section className={style['marquee']}>
         <div className={`${bebasNeue.className} ${style.items}`}>
           <p>BIMA SAPUTRA</p>
           <p>BIMA SAPUTRA</p>

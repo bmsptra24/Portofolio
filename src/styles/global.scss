@@ -24,5 +24,7 @@ $animation-duration: 500ms;
 }
 
 .fadeOut {
-  animation: fadeOut $animation-duration linear forwards !important;
+  animation: fadeOut $animation-duration 400ms linear forwards !important;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
 }
