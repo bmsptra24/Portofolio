@@ -1,10 +1,11 @@
 @import '../animations.module.scss';
 @import '../variables.module.scss';
+@import '../atom-components.module.scss';
 
 .project {
   $distance: 10rem;
   min-height: $screen-height;
-  width: 100%;
+  @include container; //module ac
   position: relative;
 
   .cover {
@@ -47,16 +48,14 @@
   }
 
   h1 {
-    padding: $distance;
+    padding-top: $distance;
+    padding-bottom: $distance;
     color: $clr-primary;
     font-size: 15rem;
     // background-color: #ea5455;
   }
 
   .items {
-    margin-left: $distance;
-    margin-right: $distance;
-
     table {
       width: 100%;
 

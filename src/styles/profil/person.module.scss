@@ -1,5 +1,6 @@
 @import '../animations.module.scss';
 @import '../variables.module.scss';
+@import '../atom-components.module.scss';
 
 .person {
   min-height: calc($screen-height - $nav-height);
@@ -52,8 +53,7 @@
 
   .intro {
     // background-color: aqua;
-    padding-left: $px-container;
-    padding-right: $px-container;
+    @include container;
     display: flex;
     justify-content: space-between;
 

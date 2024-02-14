@@ -3,9 +3,11 @@ import style from '../../styles/footer.module.scss'
 
 const Footer = () => {
   return (
-    <footer className={style.footer}>
-      <p>Footer</p>
-    </footer>
+    <section className={style['footer-container']}>
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </section>
   )
 }
 

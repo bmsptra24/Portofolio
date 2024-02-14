@@ -1,5 +1,6 @@
 @import '../animations.module.scss';
 @import '../variables.module.scss';
+@import '../atom-components.module.scss';
 
 .puisi {
   $distance: 10rem;
@@ -60,13 +61,15 @@
 
   h1 {
     color: $clr-primary;
-    padding: $distance;
+    @include container; //module ac
+    padding-top: $distance;
+    padding-bottom: $distance;
     font-size: 15rem;
     // background-color: #ea5455;
   }
 
   .puisi-body {
-    margin-left: $distance;
+    @include container; //module ac
     display: flex;
     gap: 1rem;
     flex-direction: column;

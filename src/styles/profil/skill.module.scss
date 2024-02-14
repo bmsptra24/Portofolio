@@ -1,5 +1,6 @@
 @import '../animations.module.scss';
 @import '../variables.module.scss';
+@import '../atom-components.module.scss';
 
 .skill-container {
   min-height: $screen-height;
@@ -17,6 +18,7 @@
   transform: translateZ(-5px) scale(1.5084);
 
   .title {
+    @include container; //module ac
     margin-top: 35rem;
     border-top: 0.2rem solid $clr-secondary;
     border-bottom: 0.2rem solid $clr-secondary;

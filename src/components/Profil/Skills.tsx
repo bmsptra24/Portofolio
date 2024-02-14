@@ -1,6 +1,6 @@
 import { bebasNeue } from '@/styles/font'
 import Image from 'next/image'
-import React from 'react'
+import React, { Fragment } from 'react'
 import style from '../../styles/profil/skill.module.scss'
 
 type Skill = {
@@ -49,54 +49,36 @@ const Skills = () => {
       { name: 'SASS', iconSrc: require('../../assets/icons/sass.png') },
     ],
   ]
+
+  const loopMarquee = 5
   return (
     <article className={style['skill-container']}>
       <div className={style['marquee']}>
         <div className={style['items']}>
-          {skillsMarqueee1[0].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
-          ))}
-          {skillsMarqueee1[0].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
-          ))}
-          {skillsMarqueee1[0].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
+          {[...Array(loopMarquee)].map((_, index) => (
+            <React.Fragment key={index}>
+              {skillsMarqueee1[0].map((skill, innerIndex) => (
+                <SkillItem
+                  key={innerIndex}
+                  skillName={skill.name}
+                  iconSrc={skill.iconSrc}
+                />
+              ))}
+            </React.Fragment>
           ))}
         </div>
 
         <div className={style['items']}>
-          {skillsMarqueee1[1].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
-          ))}
-          {skillsMarqueee1[1].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
-          ))}
-          {skillsMarqueee1[1].map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.name}
-              iconSrc={skill.iconSrc}
-            />
+          {[...Array(loopMarquee)].map((_, index) => (
+            <React.Fragment key={index}>
+              {skillsMarqueee1[1].map((skill, innerIndex) => (
+                <SkillItem
+                  key={innerIndex}
+                  skillName={skill.name}
+                  iconSrc={skill.iconSrc}
+                />
+              ))}
+            </React.Fragment>
           ))}
         </div>
       </div>
