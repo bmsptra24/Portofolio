@@ -9,5 +9,67 @@
 
   footer {
     @include container;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+
+    div {
+      display: flex;
+      gap: 5rem;
+      flex-direction: column;
+      width: 50%;
+
+      div {
+        display: flex;
+        gap: 1.5rem;
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+          opacity: 80%;
+        }
+
+        li {
+          font-weight: 600;
+          line-height: 2.5rem;
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          cursor: default;
+          transition: all 200ms ease-in-out;
+          width: fit-content;
+
+          p {
+            line-height: 2rem;
+            font-size: 1.3rem;
+          }
+
+          .link:hover {
+            p {
+              text-decoration-line: underline;
+            }
+          }
+
+          &:hover {
+            gap: 1.5rem;
+
+            .icon-arrow {
+              rotate: 0deg;
+            }
+          }
+
+          .icon-arrow {
+            transition: all 200ms;
+            font-size: medium;
+            rotate: -45deg;
+          }
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+      }
+    }
   }
 }

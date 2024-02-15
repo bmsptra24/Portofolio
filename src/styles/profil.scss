@@ -1,10 +1,10 @@
 @import 'variables.module.scss';
 @import 'animations.module.scss';
 
-body {
-  overflow: hidden;
-  height: max-content;
-}
+// body {
+//   overflow: hidden;
+//   height: max-content;
+// }
 
 // wrapper
 .profil-container {
@@ -12,7 +12,8 @@ body {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  // gap: 100px;
   background-color: $clr-secondary;
 }

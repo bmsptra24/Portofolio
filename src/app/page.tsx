@@ -10,14 +10,17 @@ import Footer from '@/components/Footer/Footer'
 
 const Page = () => {
   return (
-    <main className="profil-container">
-      <Header variant="dark" />
-      <Person />
-      <Skills />
-      <Puisi />
-      <Project />
-      <Footer />
-    </main>
+    <>
+      <main className="profil-container">
+        <Header variant="dark" />
+        <Person />
+        {/* <Skills /> */}
+        <Project />
+        <Puisi />
+        <Footer />
+      </main>
+      {/* <SmoothScrool classContainer="profil-container" /> */}
+    </>
   )
 }
 

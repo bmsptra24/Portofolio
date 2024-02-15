@@ -24,13 +24,15 @@ const Person = () => {
       <section className={style.intro}>
         <div className={style.text1}>
           <p>
-            There is a dimension, beyond that which is known to bear. It is a
-            dimension as vast as space and as timeless as infinity.
+            Hi, my name is Bima Saputra. I am a Student currently Sriwijaya
+            State Polytechnic. I have a passion for Frontend Development.
           </p>
           <p>
-            It is the middle ground between light and shadow, between science
-            and superstition, and it lies between the pit of bear’s fears and
-            the summit of his knowledge. <span>It is Super Rare Bears.</span>
+            As someone deeply interested in Frontend Development, I am
+            enthusiastic about creating intuitive user interfaces and engaging
+            web experiences. I thrive on the <span>creativity</span> and{' '}
+            <span>problem-solving</span>
+            involved in crafting visually appealing and functional websites.{' '}
           </p>
           <div className={style.btn}>Contact me</div>
         </div>
@@ -45,9 +47,11 @@ const Person = () => {
         </div>
         <div className={style.text2}>
           <p>
-            It is the middle ground between light and shadow, between science
-            and superstition, and it lies between the pit of bear’s fears and
-            the summit of his knowledge. <span>It is Super Rare Bears.</span>
+            As someone deeply interested in Frontend Development, I am
+            enthusiastic about creating intuitive user interfaces and engaging
+            web experiences. I thrive on the <span>creativity</span> and{' '}
+            <span>problem-solving</span>
+            involved in crafting visually appealing and functional websites.{' '}
           </p>
         </div>
       </section>

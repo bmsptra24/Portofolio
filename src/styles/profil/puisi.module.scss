@@ -4,9 +4,9 @@
 
 .puisi {
   $distance: 10rem;
-  min-height: $screen-height;
+  min-height: $screen-height * 1.1;
   width: 100%;
-  margin-top: calc(($screen-height / 2) + 1rem);
+  margin-top: $section-distance;
   position: relative;
   border-radius: 100px;
 
@@ -36,19 +36,21 @@
     transform: translate(-50%, -50%);
   }
 
+  &:active {
+    .background {
+      transition: 500ms linear;
+      clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
+    }
+  }
+
   // dark cover
   .background {
     inset: 0;
     position: absolute;
-    height: $screen-height;
+    height: $screen-height * 1.1;
     background-color: $clr-primary;
     z-index: 1;
     clip-path: circle(70px at var(--cursor-x) var(--cursor-y));
-
-    &:active {
-      transition: 500ms linear;
-      clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
-    }
 
     h1 {
       color: $clr-thirdary;
@@ -60,11 +62,13 @@
   }
 
   h1 {
+    $font-size: 12rem;
     color: $clr-primary;
     @include container; //module ac
     padding-top: $distance;
-    padding-bottom: $distance;
-    font-size: 15rem;
+    padding-bottom: 1.5rem;
+    font-size: $font-size;
+    line-height: $font-size;
     // background-color: #ea5455;
   }
 
@@ -76,7 +80,8 @@
 
     p {
       color: $clr-white;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      line-height: 1.2rem;
     }
   }
 }
