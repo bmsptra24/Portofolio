@@ -2,6 +2,7 @@ import React from 'react'
 import style from '../../styles/footer.module.scss'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import Link from 'next/link'
+import { FaCaretSquareRight } from 'react-icons/fa'
 
 const Footer = () => {
   type TFooterItem =
@@ -61,7 +62,7 @@ const Footer = () => {
                   <ul>
                     {item.items.map((list, index) => (
                       <li key={index}>
-                        <FaArrowRightLong className={style['icon-arrow']} />
+                        <FaCaretSquareRight className={style['icon-arrow']} />
                         <p>{list}</p>
                       </li>
                     ))}
@@ -86,7 +87,27 @@ const Footer = () => {
             <h1>Get in touch</h1>
             <p>
               I really like listening to music while coding, here are some of my
-              playlists. And also here are some social media that I use
+              playlists{' '}
+              <Link
+                className={style['playlist-url']}
+                target="_blank"
+                href={
+                  'https://open.spotify.com/playlist/2VgfTVLyNkmyUm9mQoMzHf?si=163d686044264f5d'
+                }
+              >
+                wilday
+              </Link>{' '}
+              and{' '}
+              <Link
+                className={style['playlist-url']}
+                target="_blank"
+                href={
+                  'https://open.spotify.com/playlist/2IjYmeGna3msVlvR6cmXEf?si=0c560dc3b1594a13'
+                }
+              >
+                mildnight
+              </Link>
+              . And also here are some social media that I use
             </p>
             <ul>
               <li>

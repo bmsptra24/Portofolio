@@ -1,0 +1,14 @@
+@import '../variables.module.scss';
+@import '../animations.module.scss';
+
+.loading-container {
+  background-color: $clr-secondary;
+  width: 100%;
+  height: 100svh;
+  color: $clr-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// loading bmsptra24

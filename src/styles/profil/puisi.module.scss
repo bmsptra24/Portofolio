@@ -14,15 +14,25 @@
   cursor: none;
   user-select: none;
 
-  .btn-read-more {
-    background-color: #f07b3f;
-    height: 120px;
-    width: 120px;
+  .description {
+    width: 300px;
     position: absolute;
-    border-radius: 50%;
     right: 10rem;
     bottom: 10rem;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    // font-size: 1.5 rem;
+    color: $clr-black;
+
+    .btn-read-more {
+      background-color: #f07b3f;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
   }
 
   // pointer
@@ -39,7 +49,9 @@
   &:active {
     .background {
       transition: 500ms linear;
-      clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
+      clip-path: circle(
+        var(--cursor-clip-size) at var(--cursor-x) var(--cursor-y)
+      );
     }
   }
 
@@ -70,6 +82,10 @@
     font-size: $font-size;
     line-height: $font-size;
     // background-color: #ea5455;
+
+    span {
+      text-wrap: nowrap;
+    }
   }
 
   .puisi-body {

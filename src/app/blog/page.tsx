@@ -13,7 +13,7 @@ const Page = async () => {
     <main className="container mx-auto h-full">
       <Background />
 
-      <section className="grid grid-cols-2 gap-6 mt-6">
+      <section className="grid grid-cols-1 px-5 md:grid-cols-2 gap-6 mt-6">
         {blogs &&
           blogs.map((blog, index) => (
             <Card

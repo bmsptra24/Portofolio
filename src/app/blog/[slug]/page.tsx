@@ -14,11 +14,11 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   metadata.title = `Blog: ${blog.title}`
 
   return (
-    <article className="p-10 flex flex-col gap-5 w-[860px]">
+    <article className="p-5 lg:p-10 flex flex-col gap-5 w-full lg:w-[860px] items-center">
       <Background />
 
       {/* prose untuk bisa pakai h1 di next js */}
-      <section className="prose lg:prose-xl">{blog.body}</section>
+      <section className="prose lg:prose-xl w-full">{blog.body}</section>
 
       {/* <div>
         <h1 className="text-5xl font-bold leading-normal">{blog.title}</h1>

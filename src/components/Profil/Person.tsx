@@ -31,8 +31,8 @@ const Person = () => {
             As someone deeply interested in Frontend Development, I am
             enthusiastic about creating intuitive user interfaces and engaging
             web experiences. I thrive on the <span>creativity</span> and{' '}
-            <span>problem-solving</span>
-            involved in crafting visually appealing and functional websites.{' '}
+            <span>problem-solving </span>involved in crafting visually appealing
+            and functional websites.{' '}
           </p>
           <div className={style.btn}>Contact me</div>
         </div>

@@ -19,6 +19,7 @@ const Puisi = () => {
     const pos = document.documentElement
 
     const updateMousePosition = (e: MouseEvent) => {
+      pos.style.setProperty('--cursor-clip-size', `200px`)
       pos.style.setProperty('--cursor-x', `${e.clientX}px`)
       pos.style.setProperty('--cursor-y', `${e.clientY}px`)
     }
@@ -39,11 +40,28 @@ const Puisi = () => {
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
-      <Link href={'/puisi'} target="_blank">
-        <button className={style['btn-read-more']}>Read more!</button>
-      </Link>
       <div className={`${style['background']} background`}>
-        <h1 className={`${bebasNeue.className} `}>BATTLE OF CHAITRA</h1>
+        <div className={style['description']}>
+          <p>
+            Besides coding, I also like to write blogs and poetry when I have
+            free time.
+          </p>
+          <Link href={'/blog'} target="_blank">
+            <button className={style['btn-read-more']}>Read more!</button>
+          </Link>
+        </div>
+        <div className={style['description']}>
+          <p>
+            Besides coding, I also like to write blogs and poetry when I have
+            free time.
+          </p>
+          <Link href={'/blog'} target="_blank">
+            <button className={style['btn-read-more']}>Read more!</button>
+          </Link>
+        </div>
+        <h1 className={`${bebasNeue.className} `}>
+          BATTLE OF <span>CHAITRA</span>
+        </h1>
 
         <div className={style['puisi-body']}>
           <p>In the battlefield, the Bhadrapada warriors stand alone</p>

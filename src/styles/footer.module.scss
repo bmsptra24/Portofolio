@@ -68,6 +68,10 @@
           font-weight: 500;
           font-size: 2rem;
           line-height: 3rem;
+
+          .playlist-url {
+            text-decoration-line: underline;
+          }
         }
       }
     }

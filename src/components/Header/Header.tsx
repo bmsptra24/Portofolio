@@ -18,7 +18,7 @@ const Header: React.FC<Props> = (props) => {
       }
       // style={{ backgroundColor: '#2d4059' }}
     >
-      <header className="">
+      <header className={variant === 'dark' ? '' : 'px-5'}>
         <Link
           href={'/'}
           className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-150"
