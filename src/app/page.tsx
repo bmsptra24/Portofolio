@@ -8,7 +8,7 @@ import Project from '@/components/Profil/Project'
 import Person from '@/components/Profil/Person'
 import Skills from '@/components/Profil/Skills'
 import Footer from '@/components/Footer/Footer'
-import Loading from './loading'
+import WelcomeAnimation from './loading'
 const Page = () => {
   // const [welcomeAnimation, setWelcomeAnimation] = useState(true)
 
@@ -20,6 +20,7 @@ const Page = () => {
     <>
       {/* {welcomeAnimation === false && ( */}
       <main className="profil-container">
+        <WelcomeAnimation />
         <Header variant="dark" />
         <Person />
         {/* <Skills /> */}

@@ -113,3 +113,10 @@
     opacity: 0%;
   }
 }
+
+@keyframes closeAnimation {
+  to {
+    display: none;
+    opacity: 0%;
+  }
+}
