@@ -1,0 +1,43 @@
+@import './variables.module.scss';
+
+@mixin loading-init($bg-color) {
+  width: 100%;
+  min-height: 100svh;
+  background-color: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-dark {
+  @include loading-init($clr-secondary);
+  color: $clr-white;
+  display: flex;
+  gap: 1rem;
+
+  $ball-lenght: 8;
+  div {
+    $ball-size: 25px;
+    width: $ball-size;
+    height: $ball-size;
+    background-color: $clr-primary;
+    border-radius: 50%;
+    animation: snake 1s alternate infinite;
+
+    @for $i from 1 through $ball-lenght {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
+  }
+}
+
+$distance: 15px;
+@keyframes snake {
+  0% {
+    transform: translateY(-$distance);
+  }
+  100% {
+    transform: translateY($distance);
+  }
+}

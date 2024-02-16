@@ -1,11 +1,17 @@
 import React from 'react'
-import style from '../styles/profil/loading.module.scss'
-import Bmsptra24 from '@/components/Decoration/Animation/Bmsptra24'
+import style from '../styles/loading.module.scss'
 
 const loading = () => {
   return (
-    <main className={style['loading-container']}>
-      <Bmsptra24 />
+    <main className={style['loading-dark']}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </main>
   )
 }

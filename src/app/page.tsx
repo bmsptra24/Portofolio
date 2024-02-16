@@ -1,5 +1,4 @@
-// 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import '../styles/profil.scss'
 import Header from '@/components/Header/Header'
@@ -8,19 +7,13 @@ import Project from '@/components/Profil/Project'
 import Person from '@/components/Profil/Person'
 import Skills from '@/components/Profil/Skills'
 import Footer from '@/components/Footer/Footer'
-import WelcomeAnimation from './loading'
+import Bmsptra24 from '@/components/Decoration/Animation/Bmsptra24'
+import Loading from './loading'
 const Page = () => {
-  // const [welcomeAnimation, setWelcomeAnimation] = useState(true)
-
-  // useEffect(() => {
-  //   setWelcomeAnimation(false)
-  // }, [])
-
   return (
     <>
-      {/* {welcomeAnimation === false && ( */}
       <main className="profil-container">
-        <WelcomeAnimation />
+        <Bmsptra24 />
         <Header variant="dark" />
         <Person />
         {/* <Skills /> */}
@@ -28,9 +21,8 @@ const Page = () => {
         <Puisi />
         <Footer />
       </main>
-      {/* )} */}
-      {/* {welcomeAnimation === true && <Loading />} */}
     </>
+    // <Loading />
   )
 }
 

@@ -62,6 +62,7 @@
     height: $screen-height * 1.1;
     background-color: $clr-primary;
     z-index: 1;
+    border-radius: 100px;
     clip-path: circle(70px at var(--cursor-x) var(--cursor-y));
 
     h1 {
