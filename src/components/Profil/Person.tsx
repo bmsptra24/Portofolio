@@ -2,6 +2,7 @@ import { bebasNeue } from '@/styles/font'
 import Image from 'next/image'
 import style from '../../styles/profil/person.module.scss'
 import React from 'react'
+import Link from 'next/link'
 
 const Person = () => {
   return (
@@ -34,7 +35,9 @@ const Person = () => {
             <span>problem-solving </span>involved in crafting visually appealing
             and functional websites.{' '}
           </p>
-          <div className={style.btn}>Contact me</div>
+          <Link href={'mailto:sbima2432@gmail.com'} className={style.btn}>
+            Contact me
+          </Link>
         </div>
         <div className={style.hero}>
           <Image

@@ -78,13 +78,6 @@ const Puisi = () => {
             The warriors themselves, in a battle of inner strength, relentless
             and tireless
           </p>
-          <br />
-          <p>Offering the fragrant scent of blooming jasmine</p>
-          <p>
-            In the midst of the silent battlefield, they narrate tales of valor
-          </p>
-          <p>In fragile tranquility, the whispers of their hearts are heard</p>
-          <p>Hidden hopes, so that righteousness does not anger</p>
         </div>
       </div>
       <h1 className={`${bebasNeue.className} `}>PERTEMPURAN CHAITRA</h1>
@@ -105,11 +98,6 @@ const Puisi = () => {
           Prajurit sendiri, dalam pertarungan batin yang andala dan tak kenal
           lelah
         </p>
-        <br />
-        <p>Suguhkan aroma harum, dari bunga melati yang merekah</p>
-        <p>Di tengah medan yang sunyi, mereka menceritakan kisah ragawacana</p>
-        <p>Dalam ketenangan yang rapuh, terdengar bisikan hati mereka</p>
-        <p>Harapan-harapan terpendam, agar dharma tidak murka</p>
       </div>
     </article>
   )
