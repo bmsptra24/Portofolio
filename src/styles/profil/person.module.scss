@@ -145,16 +145,20 @@
       left: 50%;
       margin: auto;
       transform: translate(-50%, -50%);
+      background-image: url('../../assets/images/profil/6.jpg');
+      animation: profil-animation 2s 3s ease-in forwards;
 
       // background-color: $clr-fourary;
+      background-size: cover;
       display: grid;
       place-content: center;
       height: 600px;
       width: 600px;
+      border-radius: 50%;
 
-      .image {
-        border-radius: 50%;
-      }
+      // .image {
+      //   border-radius: 50%;
+      // }
 
       @media screen and (max-width: $large) {
         height: 400px;

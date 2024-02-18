@@ -40,13 +40,13 @@ const Person = () => {
           </Link>
         </div>
         <div className={style.hero}>
-          <Image
+          {/* <Image
             className={style.image}
             width="600"
             height="600"
-            src={require('../../assets/images/profil.jpg')}
+            src={require('../../assets/images/profil/1.jpg')}
             alt="profil"
-          />
+          /> */}
         </div>
         <div className={style.text2}>
           <p>
