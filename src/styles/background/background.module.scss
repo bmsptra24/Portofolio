@@ -1,0 +1,51 @@
+.background {
+  position: absolute;
+  z-index: -50;
+  inset: 0px;
+  overflow: hidden;
+  min-height: 100svh;
+
+  span {
+    --tw-bg-opacity: 1;
+    background-color: rgb(224 242 254 / var(--tw-bg-opacity));
+    border-radius: 9999px;
+    position: absolute;
+
+    &:nth-child(1) {
+      width: 400px;
+      height: 400px;
+      top: 0px;
+      left: 300px;
+    }
+
+    &:nth-child(2) {
+      width: 600px;
+      height: 400px;
+      top: 50vh;
+      right: -200px;
+    }
+
+    &:nth-child(3) {
+      width: 700px;
+      height: 500px;
+      top: 70vh;
+      left: -350px;
+    }
+  }
+}
+
+.blur-layer {
+  position: absolute;
+  z-index: -50;
+  inset: 0px;
+  overflow: hidden;
+
+  --tw-backdrop-blur: blur(64px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+
+  min-height: 100svh;
+}

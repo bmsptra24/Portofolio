@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import React from 'react'
+import style from '../../styles/card/card.module.scss'
 
 interface Props {
   src: string
@@ -19,20 +20,17 @@ const Card: React.FC<Props> = (props) => {
   }
 
   return (
-    <div
-      className="flex gap-3 shadow-md p-3 rounded-2xl h-36 border transition-all ease-in-out cursor-pointer hover:bg-sky-100"
-      onClick={handleClick}
-    >
+    <div className={style['card-container']} onClick={handleClick}>
       <Image
         width={300}
         height={200}
         src={src}
         alt="cover"
-        className="rounded-xl"
+        className={style['image']}
       />
-      <div className="text-ellipsis overflow-hidden">
-        <h2 className="font-bold">{title}</h2>
-        <p className="line-clamp-3">{description}</p>
+      <div className={style['item']}>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
     </div>
   )

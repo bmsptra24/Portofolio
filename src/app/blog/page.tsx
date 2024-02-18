@@ -3,6 +3,7 @@ import Background from '@/components/Background/Background'
 import Card from '@/components/Card/Card'
 import { readAllBlogs } from '@/server/blog/crud'
 import React from 'react'
+import style from '../../styles/blog/display.module.scss'
 
 const Page = async () => {
   const blogs = await readAllBlogs()
@@ -10,10 +11,10 @@ const Page = async () => {
   if (!blogs || blogs.length < 1) return <p>There is nothing...</p>
 
   return (
-    <main className="container mx-auto h-full">
+    <main className={style['display-container']}>
       <Background />
 
-      <section className="grid grid-cols-1 px-5 md:grid-cols-2 gap-6 mt-6">
+      <section>
         {blogs &&
           blogs.map((blog, index) => (
             <Card

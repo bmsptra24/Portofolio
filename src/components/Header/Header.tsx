@@ -19,18 +19,15 @@ const Header: React.FC<Props> = (props) => {
       // style={{ backgroundColor: '#2d4059' }}
     >
       <header className={variant === 'dark' ? '' : 'px-5'}>
-        <Link
-          href={'/'}
-          className="hover:font-semibold hover:-tracking-wider transition-all cursor-pointer hover:text-slate-150"
-        >
+        <Link href={'/'} className={style['link']}>
           <p>Bima Saputra</p>
         </Link>
-        <div className="flex gap-12">
+        <div>
           {['Blog'].map((item, index) => (
             <Link
               href={`/${generateSlug(item)}`}
               key={index}
-              className="cursor-pointer hover:text-slate-150"
+              className={style['link']}
             >
               <p>{item}</p>
             </Link>
