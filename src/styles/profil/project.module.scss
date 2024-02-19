@@ -9,6 +9,9 @@
   position: relative;
   margin-top: $section-distance;
 
+  padding-left: 1rem;
+  padding-right: 1rem;
+
   .cover {
     position: sticky;
     top: 50%;
@@ -25,6 +28,11 @@
       width: $ilustration-1-width;
       position: absolute;
       opacity: 100%;
+
+      @media screen and (max-width: $medium) {
+        height: 70svw;
+        width: 70svw;
+      }
 
       $ilustration-2-height: 230px;
       $ilustration-2-width: 350px;
@@ -43,6 +51,20 @@
         .img {
           border-radius: 10px;
         }
+
+        @media screen and (max-width: $medium) {
+          top: 100px;
+          right: -50px;
+          height: 30svw;
+          width: 30svw;
+        }
+
+        @media screen and (max-width: $small) {
+          top: 100px;
+          right: -10px;
+          height: 30svw;
+          width: 30svw;
+        }
       }
     }
   }
@@ -52,7 +74,14 @@
     padding-bottom: $distance;
     color: $clr-primary;
     font-size: 15rem;
-    // background-color: #ea5455;
+
+    @media screen and (max-width: $medium) {
+      font-size: 9rem;
+    }
+
+    @media screen and (max-width: $small) {
+      font-size: 6rem;
+    }
   }
 
   .items {

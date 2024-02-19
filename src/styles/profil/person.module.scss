@@ -57,13 +57,11 @@
     display: flex;
     justify-content: space-between;
 
+    padding-left: 1rem;
+    padding-right: 1rem;
     @media screen and (max-width: $medium) {
       justify-content: center;
     }
-
-    // div {
-    //   border: 10px brown solid;
-    // }
 
     .text1 {
       max-width: 16rem;

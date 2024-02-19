@@ -12,11 +12,22 @@
     padding: 2rem 0 2rem 0;
     display: flex;
 
+    @media screen and (max-width: $medium) {
+      flex-direction: column;
+      gap: 5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     div {
       display: flex;
       gap: 5rem;
       flex-direction: column;
       width: 50%;
+
+      @media screen and (max-width: $medium) {
+        width: 90%;
+      }
 
       div {
         display: flex;
@@ -41,6 +52,11 @@
           p {
             line-height: 2rem;
             font-size: 1.3rem;
+
+            @media screen and (max-width: $medium) {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
           }
 
           .link:hover {
@@ -68,6 +84,11 @@
           font-weight: 500;
           font-size: 2rem;
           line-height: 3rem;
+
+          @media screen and (max-width: $medium) {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+          }
 
           .playlist-url {
             text-decoration-line: underline;
