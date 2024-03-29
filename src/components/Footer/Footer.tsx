@@ -1,8 +1,10 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import style from '../../styles/footer.module.scss'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import Link from 'next/link'
 import { FaCaretSquareRight } from 'react-icons/fa'
+// import audio1 from './../../assets/sound/no-no-wait-wait.mp3'
 
 const Footer = () => {
   type TFooterItem =
@@ -49,6 +51,11 @@ const Footer = () => {
       ],
     },
   ]
+
+  // useEffect(() => {
+  //   const audio = document.getElementById('audio-1') as HTMLAudioElement
+  //   audio.play()
+  // }, [])
 
   return (
     <section className={style['footer-container']}>
@@ -111,8 +118,14 @@ const Footer = () => {
             </p>
             <ul>
               <li>
+                <audio
+                  id="audio-1"
+                  src={'./../../assets/sound/let-me-tell-you-something.mp3'}
+                  hidden
+                />
                 <FaArrowRightLong className={style['icon-arrow']} />
                 <Link
+                  // onMouseOver={playAudio}
                   className={style['link']}
                   href={'mailto:sbima2432@gmail.com'}
                 >

@@ -23,14 +23,14 @@ const Project = () => {
   const projectsList: TProject[] = [
     {
       title: 'Meja Belajar Digital',
-      tech: 'React, Tailwind',
+      tech: 'React, Tailwind, Firebase',
       ilustration1: require('../../assets/images/projects/mbd.png'),
       ilustration2: require('../../assets/images/projects/mbd-2.png'),
       url: 'https://mejabelajardigital.web.app/',
     },
     {
       title: 'Root of Life',
-      tech: 'React, Next, Tailwind',
+      tech: 'Construct 2, Photoshop',
       ilustration1: require('../../assets/images/projects/root-of-life.png'),
       ilustration2: require('../../assets/images/projects/root-of-life-2.png'),
       url: 'https://bmsptra24.github.io/Root-of-Life/',
@@ -44,7 +44,7 @@ const Project = () => {
     },
     {
       title: 'Beet AI',
-      tech: 'React, Next',
+      tech: 'Next.js, Tailwind, Docker, OpenAI API',
       ilustration1: require('../../assets/images/projects/beet-ai.png'),
       ilustration2: require('../../assets/images/projects/beet-ai-2.png'),
       url: 'https://beet-ai.vercel.app/',
