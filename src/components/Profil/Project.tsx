@@ -51,7 +51,7 @@ const Project = () => {
     },
     {
       title: 'Portofolio V1',
-      tech: 'React Native, Tailwind',
+      tech: 'HTML, CSS, JS',
       ilustration1: require('../../assets/images/projects/portofolio1.png'),
       ilustration2: require('../../assets/images/projects/portovolio1-2.png'),
       url: 'https://bmsptra24.github.io/Web-Portfolio/',
