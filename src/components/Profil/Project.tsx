@@ -68,7 +68,7 @@ const Project = () => {
       tech: 'Next JS, Tailwind',
       ilustration1: require('../../assets/images/projects/portofolio2.png'),
       ilustration2: require('../../assets/images/projects/portofolio2-2.png'),
-      url: 'https://portofolio-bmsptra24.vercel.app/',
+      url: 'https://bmsptra-portofolio-v2.vercel.app/',
     },
     {
       title: 'Calculator',
