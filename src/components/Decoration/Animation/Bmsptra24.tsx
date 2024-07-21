@@ -1,83 +1,26 @@
-import React from 'react'
-import style from '../../../styles/profil/bmsptra24-draw.module.scss'
+"use client";
+import Rive, { useRive } from "@rive-app/react-canvas";
+import React, { useEffect, useState } from "react";
 
 const Bmsptra24 = () => {
-  return (
-    <>
-      <main className={style['loading-container']}>
-        <div className={style['container-bmsptra']}>
-          {/* <!-- <p>bmsptra</p> --> */}
-          <div className={style['b']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+  const { rive, RiveComponent, container } = useRive({
+    src: "/animations/draw-bmsptra.riv",
+    stateMachines: ["b", "m", "s", "p", "t", "r", "a"],
+    autoplay: true,
+    onStop: (event) => {
+      console.log({ event });
+      if (!event?.data) return;
+      if (
+        event.type === "stop" &&
+        Array.isArray(event.data) &&
+        event.data[0] === "a"
+      ) {
+        container?.classList.add("fadeOut");
+      }
+    },
+  });
 
-          <div className={style['m']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+  return <RiveComponent className=" absolute inset-0 z-50 bg-[#432818]" />;
+};
 
-          <div className={style['s']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <div className={style['p']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <div className={style['t']}>
-            <div></div>
-            <div></div>
-          </div>
-
-          <div className={style['r']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <div className={style['a']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>{' '}
-      </main>
-    </>
-  )
-}
-
-export default Bmsptra24
+export default Bmsptra24;
