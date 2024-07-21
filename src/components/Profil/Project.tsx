@@ -2,7 +2,7 @@
 import { bebasNeue } from "@/styles/font";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import style from "../../styles/profil/project.module.scss";
 import { projectsList, TProject } from "@/constans/project";
@@ -10,9 +10,32 @@ import { blurDataURL } from "@/constans/image";
 
 const Project = () => {
   const [ilustration, setIlustration] = useState<[string, string]>([
-    "/image-1.jpg",
-    "/image-1.jpg",
+    "/images/helper/loading.jpg",
+    "/images/helper/loading.jpg",
   ]);
+  const [coverDegX, setCoverDegX] = useState(0);
+  const [coverDegY, setCoverDegY] = useState(0);
+
+  useEffect(() => {
+    // set the pointer
+    const updateMousePosition = (e: MouseEvent) => {
+      // display-size = 100
+      // clientX      = ?
+      // formula      = (clientX x 100 / display-size) - 50, 50 untuk agar dia membelah deg nya jadi dua, yakni ke kanan dan kiri
+      const maxDegX = 100;
+      const calculateX =
+        ((e.clientX * maxDegX) / window.innerWidth - maxDegX / 2) * -1;
+      setCoverDegX(calculateX);
+
+      const maxDegY = 40;
+      const calculateY =
+        (e.clientY * maxDegY) / window.innerHeight - maxDegY / 2;
+      setCoverDegY(calculateY);
+    };
+
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => window.removeEventListener("mousemove", updateMousePosition);
+  }, []);
 
   //! add anmimate
   const onItemHover = async (project: TProject) => {
@@ -30,14 +53,20 @@ const Project = () => {
 
   return (
     <article className={`${style["project"]} project`}>
-      <h1 className={`${bebasNeue.className} `}>PROJECTS</h1>
+      <h1 className={`${bebasNeue.className}`}>PROJECTS</h1>
 
-      <div className={`${style["cover"]} fadeOut cover`}>
+      <div
+        style={{
+          transform: `rotateY(${coverDegX}deg) rotateX(${coverDegY}deg)`,
+        }}
+        className={`${style["cover"]} fadeOut cover`}
+        id="cover-project"
+      >
         <div className={`${style["ilustration-1"]} floating-sm`}>
           <Image
             loading="lazy"
-            blurDataURL={blurDataURL}
-            placeholder="blur"
+            // blurDataURL={blurDataURL}
+            // placeholder="blur"
             className={`${style["img"]}`}
             alt="ilustration-1"
             src={ilustration[0]}
@@ -47,8 +76,8 @@ const Project = () => {
           <div className={`${style["ilustration-2"]} floating-md`}>
             <Image
               loading="lazy"
-              blurDataURL={blurDataURL}
-              placeholder="blur"
+              // blurDataURL={blurDataURL}
+              // placeholder="blur"
               className={`${style["img"]}`}
               alt="ilustration-1"
               src={ilustration[1]}
