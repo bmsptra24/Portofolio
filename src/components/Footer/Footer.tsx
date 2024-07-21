@@ -4,7 +4,7 @@ import style from "../../styles/footer.module.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 import { FaCaretSquareRight } from "react-icons/fa";
-// import audio1 from './../../assets/sound/no-no-wait-wait.mp3'
+// import audio1 from '/sound/no-no-wait-wait.mp3'
 
 const Footer = () => {
   type TFooterItem =
@@ -122,7 +122,7 @@ const Footer = () => {
               <li>
                 <audio
                   id="audio-1"
-                  src={"./../../assets/sound/let-me-tell-you-something.mp3"}
+                  src={"/sound/let-me-tell-you-something.mp3"}
                   hidden
                 />
                 <FaArrowRightLong className={style["icon-arrow"]} />
