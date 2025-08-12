@@ -19,7 +19,7 @@ const Puisi = () => {
     const pos = document.documentElement;
 
     const updateMousePosition = (e: MouseEvent) => {
-      pos.style.setProperty("--cursor-clip-size", `200px`);
+      pos.style.setProperty("--cursor-clip-size", `400px`);
       pos.style.setProperty("--cursor-x", `${e.clientX}px`);
       pos.style.setProperty("--cursor-y", `${e.clientY}px`);
     };
@@ -59,7 +59,7 @@ const Puisi = () => {
         </div>
         <h1 className={`${bebasNeue.className} `}>PENGHARGAAN</h1>
 
-        <div className={style["puisi-body"]}>
+        {/* <div className={style["puisi-body"]}>
           <p>
             1. Juara 1 Poster Terbaik dalam Kompetisi Mahasiswa Informatika
             Politeknik Nasional V (KMIPN V)
@@ -73,11 +73,11 @@ const Puisi = () => {
             4. Salah satu dari 3 individu yang terpilih sebagai Asisten Mentor
             untuk Pelatihan Desain Web
           </p>
-        </div>
+        </div> */}
       </div>
       <h1 className={`${bebasNeue.className} `}>AWARDS</h1>
 
-      <div className={style["puisi-body"]}>
+      {/* <div className={style["puisi-body"]}>
         <p>
           1. 1st Place Best Poster in Kompetisi Mahasiswa Informatika Politeknik
           Nasional V KMIPN V
@@ -91,7 +91,7 @@ const Puisi = () => {
           4. 1 out of 3 individuals is selected as a Assistant Mentor for Web
           Design Training
         </p>
-      </div>
+      </div> */}
     </article>
   );
 };

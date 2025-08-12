@@ -3,13 +3,14 @@
 @import '../atom-components.module.scss';
 
 .puisi {
-  $distance: 10rem;
+  $distance: 5rem;
   min-height: $screen-height * 1.1;
   width: 100%;
-  margin-top: $section-distance;
+  margin-top: $section-distance * 2;
   position: relative;
   border-radius: 100px;
-  background-image: url('/images/background/kmipn.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/images/background/awards-front.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -77,8 +78,8 @@
     background-color: $clr-primary;
     z-index: 1;
     border-radius: 100px;
-    clip-path: circle(70px at var(--cursor-x) var(--cursor-y));
-    background-image: url('/images/background/kmipn-with-bg.jpg');
+    clip-path: circle(200px at var(--cursor-x) var(--cursor-y));
+    background-image: url('/images/background/awards-back.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
