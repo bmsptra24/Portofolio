@@ -2,9 +2,10 @@
 @import 'variables.module.scss';
 
 .footer-container {
-  border-top: 2px solid $clr-white;
+  // border-top: 2px solid $clr-white;
   margin-top: 100px;
-  height: 300px;
+  margin-bottom: 100px;
+  // height: 300px;
   color: $clr-white;
 
   footer {

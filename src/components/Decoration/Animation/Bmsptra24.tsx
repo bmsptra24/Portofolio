@@ -38,7 +38,7 @@ const Bmsptra24 = () => {
 
   return (
     <RiveComponent
-      className="absolute inset-0 z-50 bg-[#432818]"
+      className="fixed inset-0 z-50 bg-[#432818] max-h-svh"
       // If you want to apply fadeOut directly, you can conditionally add it here
       // style={{ animation: isFadingOut ? 'fadeOut 1s forwards' : 'none' }}
     />
