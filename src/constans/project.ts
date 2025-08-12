@@ -12,7 +12,7 @@ export const projectsList: TProject[] = [
     tech: 'React Native',
     ilustration1: '/images/projects/ssr-1.jpg',
     ilustration2: '/images/projects/ssr-2.png',
-    url: 'https://github.com/bmsptra24/smartscan-rivai',
+    url: 'https://bmsptra24.github.io/smartscan-rivai/',
   },
   {
     title: 'Meja Belajar Digital',
