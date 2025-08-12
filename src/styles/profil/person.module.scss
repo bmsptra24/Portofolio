@@ -143,20 +143,24 @@
       left: 50%;
       margin: auto;
       transform: translate(-50%, -50%);
-      background-image: url('/images/profil/6.jpg');
-      animation: profil-animation 4s 5.1s ease-in forwards;
+      // background-image: url('/images/profil/6.jpg');
+      // animation: profil-animation 4s 5.1s ease-in forwards;
 
       // background-color: $clr-fourary;
-      background-size: cover;
-      display: grid;
-      place-content: center;
+      // background-size: cover;
+      // display: grid;
+      // place-content: center;
       height: 600px;
-      width: 600px;
-      border-radius: 50%;
+      width: 617px;
+      // border-radius: 50%;
 
-      // .image {
-      //   border-radius: 50%;
-      // }
+      .photo-profile-container {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        overflow: hidden;
+      }
 
       @media screen and (max-width: $large) {
         height: 400px;

@@ -1,106 +1,99 @@
-'use client'
+"use client";
 
-import { bebasNeue } from '@/styles/font'
-import style from '../../styles/profil/puisi.module.scss'
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { bebasNeue } from "@/styles/font";
+import style from "../../styles/profil/puisi.module.scss";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Puisi = () => {
   useEffect(() => {
-    onHover()
-    onLeave()
-  }, [])
+    onHover();
+    onLeave();
+  }, []);
   const onHover = () => {
     // show bg
-    const bg = document.querySelector('.background') as HTMLElement
-    bg.style.opacity = '100%'
+    const bg = document.querySelector(".background") as HTMLElement;
+    bg.style.opacity = "100%";
 
     // set the pointer
-    const pos = document.documentElement
+    const pos = document.documentElement;
 
     const updateMousePosition = (e: MouseEvent) => {
-      pos.style.setProperty('--cursor-clip-size', `200px`)
-      pos.style.setProperty('--cursor-x', `${e.clientX}px`)
-      pos.style.setProperty('--cursor-y', `${e.clientY}px`)
-    }
+      pos.style.setProperty("--cursor-clip-size", `200px`);
+      pos.style.setProperty("--cursor-x", `${e.clientX}px`);
+      pos.style.setProperty("--cursor-y", `${e.clientY}px`);
+    };
 
-    window.addEventListener('mousemove', updateMousePosition)
+    window.addEventListener("mousemove", updateMousePosition);
 
-    return () => window.removeEventListener('mousemove', updateMousePosition)
-  }
+    return () => window.removeEventListener("mousemove", updateMousePosition);
+  };
 
   const onLeave = () => {
-    const bg = document.querySelector('.background') as HTMLElement
-    bg.style.opacity = '0'
-  }
+    const bg = document.querySelector(".background") as HTMLElement;
+    bg.style.opacity = "0";
+  };
 
   return (
     <article
-      className={style['puisi']}
+      className={style["puisi"]}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
-      <div className={`${style['background']} background`}>
-        <div className={style['description']}>
+      <div className={`${style["background"]} background`}>
+        <div className={style["description"]}>
           <p>
-            Besides coding, I also like to write blogs and poetry when I have
-            free time.
+            Besides coding, I also like to write blogs when I have free time.
           </p>
-          <Link href={'/blog'} target="_blank">
-            <button className={style['btn-read-more']}>Read more!</button>
+          <Link href={"https://medium.com/@bmsptra"} target="_blank">
+            <button className={style["btn-read-more"]}>Read more!</button>
           </Link>
         </div>
-        <div className={style['description']}>
+        <div className={style["description"]}>
           <p>
-            Besides coding, I also like to write blogs and poetry when I have
-            free time.
+            Besides coding, I also like to write blogs when I have free time.
           </p>
-          <Link href={'/blog'} target="_blank">
-            <button className={style['btn-read-more']}>Read more!</button>
+          <Link href={"https://medium.com/@bmsptra"} target="_blank">
+            <button className={style["btn-read-more"]}>Read more!</button>
           </Link>
         </div>
-        <h1 className={`${bebasNeue.className} `}>
-          BATTLE OF <span>CHAITRA</span>
-        </h1>
+        <h1 className={`${bebasNeue.className} `}>PENGHARGAAN</h1>
 
-        <div className={style['puisi-body']}>
-          <p>In the battlefield, the Bhadrapada warriors stand alone</p>
+        <div className={style["puisi-body"]}>
           <p>
-            The sun&apos;s rays reflect the sparkle of arunika in their hands
+            1. Juara 1 Poster Terbaik dalam Kompetisi Mahasiswa Informatika
+            Politeknik Nasional V (KMIPN V)
           </p>
-          <p>Their footsteps, trembling the senses of the listeners</p>
-          <p>Respected warriors, ready to face the calling of fate</p>
           <br />
-          <p>The thick scent of blood carried by the blowing wind</p>
-          <p>Fills their souls, igniting an unwavering spirit of immortality</p>
-          <p>Yet, the unyielding cheers of the spirit</p>
+          <p>2. Juara 3 Desain Web Valter di HMJ TEKKOM</p>
+          <br />
+          <p>3. Finalis Desain Web ISC di Universitas Kristen Duta Wacana</p>
+          <br />
           <p>
-            The warriors themselves, in a battle of inner strength, relentless
-            and tireless
+            4. Salah satu dari 3 individu yang terpilih sebagai Asisten Mentor
+            untuk Pelatihan Desain Web
           </p>
         </div>
       </div>
-      <h1 className={`${bebasNeue.className} `}>PERTEMPURAN CHAITRA</h1>
+      <h1 className={`${bebasNeue.className} `}>AWARDS</h1>
 
-      <div className={style['puisi-body']}>
-        <p>Di medan perang, prajurit Bhadrapada sendiri</p>
-        <p>Sinar mentari memantulkan kilau arunika di tangan</p>
-        <p>Derap langkah mereka, menggetarkan indera pendengar</p>
-        <p>Prajurit terhormat, siap menghadapi prema yang memanggil</p>
-        <br />
-        <p>Aroma darah yang tebal, terbawa angin yang berhembus</p>
+      <div className={style["puisi-body"]}>
         <p>
-          Mengisi jiwa mereka, membangkitkan semangat amerta yang tak
-          tergoyahkan
+          1. 1st Place Best Poster in Kompetisi Mahasiswa Informatika Politeknik
+          Nasional V KMIPN V
         </p>
-        <p>Namun sorakan diwa yang tak dapat dilawan</p>
+        <br />
+        <p>2. 3rd Place Web Desain Valter in HMJ TEKKOM</p>
+        <br />
+        <p>3. Finalis Web Desain ISC in Universitas Kristen Duta Wacana</p>
+        <br />
         <p>
-          Prajurit sendiri, dalam pertarungan batin yang andala dan tak kenal
-          lelah
+          4. 1 out of 3 individuals is selected as a Assistant Mentor for Web
+          Design Training
         </p>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default Puisi
+export default Puisi;

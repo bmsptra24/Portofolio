@@ -1,20 +1,18 @@
-import type { Metadata } from 'next'
-import { Jost } from 'next/font/google'
-import '../styles/global.scss'
-import Header from '@/components/Header/Header'
-import Background from '@/components/Background/Background'
+import type { Metadata } from "next";
+import { Jost } from "next/font/google";
+import "../styles/global.scss";
 
-const josh = Jost({ subsets: ['latin'] })
+const josh = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Bmsptra24 Blog',
-  description: 'Blog by Bima Saputra',
-}
+  title: "Bmsptra24 Blog",
+  description: "Blog by Bima Saputra",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -24,5 +22,5 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  )
+  );
 }

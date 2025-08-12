@@ -4,6 +4,7 @@ import style from "../../styles/profil/person.module.scss";
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import PhotoProfile from "../Decoration/Animation/PhotoProfile";
 
 const Person = () => {
   return (
@@ -42,13 +43,7 @@ const Person = () => {
           </Link>
         </div>
         <div className={style.hero}>
-          {/* <Image
-            className={style.image}
-            width="600"
-            height="600"
-            src={require('/images/profil/1.jpg')}
-            alt="profil"
-          /> */}
+          <PhotoProfile />
         </div>
         <div className={style.text2}>
           <p>

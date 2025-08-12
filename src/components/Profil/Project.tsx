@@ -65,8 +65,8 @@ const Project = () => {
         <div className={`${style["ilustration-1"]} floating-sm`}>
           <Image
             loading="lazy"
-            // blurDataURL={blurDataURL}
-            // placeholder="blur"
+            blurDataURL={blurDataURL.project}
+            placeholder="blur"
             className={`${style["img"]}`}
             alt="ilustration-1"
             src={ilustration[0]}
@@ -76,8 +76,8 @@ const Project = () => {
           <div className={`${style["ilustration-2"]} floating-md`}>
             <Image
               loading="lazy"
-              // blurDataURL={blurDataURL}
-              // placeholder="blur"
+              blurDataURL={blurDataURL.project}
+              placeholder="blur"
               className={`${style["img"]}`}
               alt="ilustration-1"
               src={ilustration[1]}

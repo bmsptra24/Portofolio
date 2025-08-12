@@ -120,11 +120,11 @@ const Footer = () => {
             </p>
             <ul>
               <li>
-                <audio
+                {/* <audio
                   id="audio-1"
                   src={"/sound/let-me-tell-you-something.mp3"}
                   hidden
-                />
+                /> */}
                 <FaArrowRightLong className={style["icon-arrow"]} />
                 <Link
                   // onMouseOver={playAudio}

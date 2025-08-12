@@ -5,9 +5,7 @@ import Header from "@/components/Header/Header";
 import Puisi from "@/components/Profil/Puisi";
 import Project from "@/components/Profil/Project";
 import Person from "@/components/Profil/Person";
-import Skills from "@/components/Profil/Skills";
 import Footer from "@/components/Footer/Footer";
-import Loading from "./loading";
 import Bmsptra24 from "@/components/Decoration/Animation/Bmsptra24";
 const Page = () => {
   return (
