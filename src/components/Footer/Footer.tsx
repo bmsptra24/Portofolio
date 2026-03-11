@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import style from "../../styles/footer.module.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
@@ -24,14 +24,30 @@ const Footer = () => {
       title: "About",
       variant: "right",
       items:
-        "Hi, I am a student from Informatics Management at Sriwijaya State Polytechnic who is interested in web development. I am actively participating in web development training and competitions.",
+        "React Developer with a solid foundation in both mobile and web application development. While specializing in building clean, scalable, and user-friendly cross-platform applications with React Native, I also have strong skills in frontend technologies like React.js, Next.js, and TypeScript, as well as backend development using Node.js, Express.js, and Prisma.",
+    },
+    {
+      title: "Experience",
+      variant: "left",
+      items: [
+        "HRIS Mobile Dev at TRANS TV",
+        "Frontend Dev at Kementrian ATRBPN OKI",
+        "IT Support & Administrative at PLN ULP Rivai",
+        "Frontend Dev at Berkala",
+        "MBKM Mandiri Frontend Dev Intern at SchooltechId",
+        "Frontend Lead at GDSC Sriwijaya State Polytechnic",
+        "Assistant Mentor in Web Design Training",
+      ],
     },
     {
       title: "Achievements",
       variant: "left",
       items: [
+        "Published 5+ academic journals",
+        "Registered Intellectual Property Rights (HAKI)",
+        "Active Research Assistant for faculty projects",
         "3rd Place | Web Design Competition",
-        "1st Place Best Poster | Create Informatics Innovation | KMIPN V",
+        "1st Place Best Poster | KMIPN V",
       ],
     },
     {
@@ -40,15 +56,6 @@ const Footer = () => {
       items: [
         "English | Limited working proficiency",
         "Indonesian | Native or bilingual proficiency",
-      ],
-    },
-    {
-      title: "Experience",
-      variant: "left",
-      items: [
-        "MBKM Mandiri Frontend Developer Intern at SchooltechId",
-        "GDSC Sriwijaya State Polytechnic",
-        "Assistant Mentor in Web Design Training",
       ],
     },
   ];
