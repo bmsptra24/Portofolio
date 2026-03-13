@@ -11,7 +11,7 @@ export const projectsList: TProject[] = [
     title: "Assessment Transmedia",
     tech: "React Native, Expo",
     ilustration1: "/images/projects/assessment-1.jpg",
-    ilustration2: "/images/projects/assessment-2.png",
+    ilustration2: "/images/projects/assessment-2.jpg",
     url: "https://play.google.com/store/apps/details?id=id.transmedia.assessment.user2&pli=1",
   },
   {
