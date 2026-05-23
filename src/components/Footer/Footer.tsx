@@ -45,6 +45,7 @@ const Footer = () => {
       items: [
         "Published 5+ academic journals",
         "Registered Intellectual Property Rights (HAKI)",
+        "3 BNSP certificates in mobile and web programming",
         "Active Research Assistant for faculty projects",
         "3rd Place | Web Design Competition",
         "1st Place Best Poster | KMIPN V",
@@ -101,7 +102,7 @@ const Footer = () => {
           })}
           <div>
             <h1>Get in touch</h1>
-            <p>
+            {/* <p>
               I really like listening to music while coding, here are some of my
               playlists{" "}
               <Link
@@ -124,7 +125,8 @@ const Footer = () => {
                 mildnight
               </Link>
               . And also here are some social media that I use
-            </p>
+            </p> */}
+            <p>Here are some social media that I use</p>
             <ul>
               <li>
                 {/* <audio
@@ -148,6 +150,21 @@ const Footer = () => {
                   href={"https://github.com/bmsptra24/"}
                 >
                   <p>GITHUB</p>
+                </Link>
+              </li>
+              <li>
+                {/* <audio
+                  id="audio-1"
+                  src={"/sound/let-me-tell-you-something.mp3"}
+                  hidden
+                /> */}
+                <FaArrowRightLong className={style["icon-arrow"]} />
+                <Link
+                  // onMouseOver={playAudio}
+                  className={style["link"]}
+                  href={"https://www.instagram.com/bmsptra24/"}
+                >
+                  <p>IG</p>
                 </Link>
               </li>
               <li>

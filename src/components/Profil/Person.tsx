@@ -27,8 +27,7 @@ const Person = () => {
       <section className={style.intro}>
         <div className={style.text1}>
           <p>
-            Hi, my name is Bima Saputra. React Developer with a solid foundation
-            in both mobile and web application development.
+            Hi, my name is Bima Saputra. An experienced React Native Developer.
           </p>
           <p>
             While specializing in building clean, scalable, and user-friendly{" "}
